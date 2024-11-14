@@ -5,13 +5,12 @@ import pandas as pd
 from collections import Counter
 import json
 
+
 def label_propagation(G, max_iter=10):
     # Initialize each node with a unique integer label
     labels = {node: i for i, node in enumerate(G.nodes())}
     
     for _ in range(max_iter):
-        # print("Iteration: ", _)
-        # print("Initial Labels: ", labels)
         nodes = list(G.nodes())
         random.shuffle(nodes)  # Randomize order of nodes
 
