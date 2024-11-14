@@ -15,8 +15,9 @@ library(dplyr)
 # Paths to JSON files for each week (replace with actual paths)
 json_files <- c("louvain/communities_output_week3.json", "louvain/communities_output_week4.json", "louvain/communities_output_week5.json")
 
+#json_files <- c("spectral_clustering/week_1_clusters.json","spectral_clustering/week_3_clusters.json","spectral_clustering/week_5_clusters.json")
 
-
+#json_files <- c("label_prop_outputs/week1.json","label_prop_outputs/week3.json","label_prop_outputs/week6.json")
 # Load community maps from JSON files
 community_maps <- lapply(json_files, function(file) {
   # Read each JSON file and extract community mapping
@@ -121,3 +122,7 @@ ggplot(transition_data, aes(axis1 = From_Community_Label, axis2 = To_Community_L
   scale_fill_manual(values = community_colors) +
   theme_void() +
   labs(title = "Community Transitions Over Weeks", x = "Weeks", y = "Community Size")
+
+
+
+  
