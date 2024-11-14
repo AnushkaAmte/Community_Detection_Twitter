@@ -13,9 +13,9 @@ library(networkD3)
 library(dplyr)
 
 # Paths to JSON files for each week (replace with actual paths)
-json_files <- c("louvain/communities_output_week3.json", "louvain/communities_output_week4.json", "louvain/communities_output_week5.json")
+#json_files <- c("louvain/communities_output_week3.json", "louvain/communities_output_week4.json", "louvain/communities_output_week5.json")
 
-#json_files <- c("spectral_clustering/week_1_clusters.json","spectral_clustering/week_3_clusters.json","spectral_clustering/week_5_clusters.json")
+json_files <- c("spectral_clustering/week_1_clusters.json","spectral_clustering/week_3_clusters.json","spectral_clustering/week_5_clusters.json")
 
 #json_files <- c("label_prop_outputs/week1.json","label_prop_outputs/week3.json","label_prop_outputs/week6.json")
 # Load community maps from JSON files
@@ -27,7 +27,7 @@ community_maps <- lapply(json_files, function(file) {
 })
 
 # Define the minimum community size
-min_community_size <- 50
+min_community_size <- 5
 
 # Initialize a list to store filtered transition data
 transition_data <- data.frame(From_Week = character(),
